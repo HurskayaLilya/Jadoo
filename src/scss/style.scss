@@ -18,6 +18,14 @@
     object-fit: cover;
     }
     /*-----------------------------------*/
+    *{
+      box-sizing: border-box;
+      font-family: $mainfont;
+    }
+    .container{
+      max-width: $maxWidthContainer;
+      margin: 0 auto;
+    }
 //Адаптивна властивість
 @mixin adaptive-value($property, $startSize, $minSize, $type) {
     $addSize: $startSize - $minSize;
