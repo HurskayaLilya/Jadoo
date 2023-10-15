@@ -52,7 +52,7 @@
          width: 100%;
          top: 70px;
          height: 100%;
-         background-color: #e25c41b1;
+         background-color: #e25c41db;
          position: fixed;
          z-index: 1;
          left: -100%;
@@ -74,7 +74,8 @@
    }
    .navigation__item{
       padding-bottom: 40px;
-      font-size: 25px;
+      font-size: 30px;
+      font-weight: 700;
    }
    .header__icon{
       margin-left: 15px;

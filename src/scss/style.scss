@@ -31,3 +31,125 @@
     }
 
  /*========================================================================*/
+.title{
+  font-family: 'Volkhov';
+  font-weight: 700;
+  font-size: 50px;
+  line-height: normal;
+  letter-spacing: normal;
+}
+.text{
+  font-weight: 500;
+  color:#5E6282;
+}
+.button{
+  padding: 18px 25px;
+  color: white;
+  font-family: "Open Sans";
+  font-weight: 500;
+  font-size: 18px;
+  border-radius: 10px;
+  &:hover{
+    background-color: $maincolor;
+    transition:all 0.3s ease 0.3s;
+  }
+}
+.travel{
+  background-image: url("@img/plane.svg");
+  background-repeat: no-repeat;
+  &__wrapper{
+    display: flex;
+    align-items: center;
+  }
+  &__block{
+    flex: 1 0 50%;
+  }
+  &__img.ibg{
+    padding: 0% 0% 67% 0%;
+  }
+  &__img{
+    width:100% ;
+  }
+  @media (max-width:$md3) {
+    &__wrapper{
+      flex-direction: column;
+      justify-content: center;
+    }
+    &__img.ibg{
+      padding: 0% 0% 100% 0%;
+    }
+  }
+}
+.block-travel{
+  padding-left: 15px;
+  &__tagline{
+    font-size: 20px;
+    font-weight: 700;
+    color:$maincolor;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  &__title{
+    @include adaptive-value ("font-size", 84 , 50, 1);
+    letter-spacing: -3.36px;
+    line-height: 106%;
+    color: var(--1st, #181E4B);
+  }
+  &__text{
+    margin: 30px 0;
+    max-width: 477px;
+  }
+  &__actions{
+    display: flex;
+    align-items: center;
+  }
+  &__button{
+    background-color: #F1A501;
+    margin-right: 45px;
+    box-shadow: 0px 20px 35px 0px rgba(241, 165, 1, 0.15);
+  }
+  &__play{
+    display: flex;
+    align-items: center;
+    .play{
+      @include adaptive-value ("width", 52 , 60, 1);
+      @include adaptive-value ("height", 52 , 60, 1);
+      border-radius: 50%;
+      background-color: $maincolor;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      margin-right: 15px;
+      &:hover{
+        background-color: #F1A501;
+        transition: all 0.3s ease 0.3s;
+      }
+
+    }
+  }
+  @media (max-width:$md3) {
+    text-align: center;
+    &__tagline{
+      text-align: center;
+    }
+    &__text{
+      max-width: none;
+      margin: 15px 0;
+    }
+    &__actions{
+      justify-content: center;
+    }
+  }
+  @media (max-width:$md4) {
+    &__actions{
+      flex-direction: column;
+      
+    }
+    &__button{
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  }
+}
