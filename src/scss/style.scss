@@ -24,6 +24,8 @@
       box-sizing: border-box;
       font-family: $mainfont;
       font-size: 16px;
+      color: #5E6282;
+      font-weight: 500;
     }
     .container{
       max-width: $maxWidthContainer + px;
@@ -37,10 +39,7 @@
   font-size: 50px;
   line-height: normal;
   letter-spacing: normal;
-}
-.text{
-  font-weight: 500;
-  color:#5E6282;
+  color: #14183E;
 }
 .button{
   padding: 18px 25px;
@@ -153,3 +152,82 @@
     }
   }
 }
+/*====================================================*/
+.headline{
+  color: #5E6282;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.services{
+  @include adaptive-value ("padding-bottom", 120 , 50, 1);
+  &__wrapper{  
+  }
+  &__title{
+    text-align: center;
+    @include adaptive-value ("margin-bottom", 68 , 48, 1);
+  }
+}
+.items-services{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(267px, 1fr));
+  gap: 15px;
+  &__item{
+    position: relative;
+    border-radius: 36px;
+    height: 314px;
+    z-index: 2;
+    &:hover{
+      transition: all 0.3s ease 0.3s;
+      background: #FFF;
+      box-shadow: 0px 1.85185px 3.14815px 0px rgba(0, 0, 0, 0.00), 0px 8.14815px 6.51852px 0px rgba(0, 0, 0, 0.01), 0px 20px 13px 0px rgba(0, 0, 0, 0.01), 0px 38.51852px 25.48148px 0px rgba(0, 0, 0, 0.01), 0px 64.81481px 46.85185px 0px rgba(0, 0, 0, 0.02), 0px 100px 80px 0px rgba(0, 0, 0, 0.02);
+      &::before{
+        display: block;
+      }
+    }
+  }
+  &__icon{
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__title{
+    font-family: "Open Sans";
+    font-weight: 600;
+    font-size: 20px;
+    color: #1E1D4C;
+    margin-bottom: 15px;
+  } 
+  &__inner{
+    padding: 50px;
+    background-color: #fff;
+    position: relative;
+    z-index: 4;
+    border-radius: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    // height: 314px;
+
+  }
+}
+@media (any-hover:hover){
+  .items-services__item::before{
+    content: "";
+    display: none;  
+    position: absolute;
+    z-index: 1;
+    bottom: -24%;
+    left: -15%;
+    width: 100px;
+    height: 100px;
+    border-radius: 30px 0px 10px 0px;
+    background: $maincolor;
+    
+  }
+}
+
