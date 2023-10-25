@@ -3,6 +3,7 @@
 @import "reset";
 @import "mixin";
 @import "header";
+@import "footer";
 .ibg{
     background-position: center;
     padding: 0 0 50% 0;
@@ -50,7 +51,7 @@
   color: white;
   font-family: "Open Sans";
   font-weight: 500;
-  font-size: 18px;
+  @include adaptive-value ("font-size", 18 , 35, 1);
   border-radius: 10px;
   &:hover{
     background-color: $maincolor;
@@ -283,7 +284,7 @@
 }
 /*----------------------------------------------------------*/
 .booking{
-  padding-bottom: 200px;
+  @include adaptive-value ("padding-bottom", 200 , 50, 1);
   &__wrapper{
     display: flex;
     align-items: center;
@@ -451,7 +452,7 @@
   span{
   color: #8A79DF;}
 }
-@media (max-width:$md3){
+@media (max-width:$md2){
   .booking{
     &__wrapper{
       flex-direction: column;
@@ -464,3 +465,82 @@
     margin-top: 30px;
   }
 }
+@media (max-width:$md3){
+  .ongoing{
+    position: static;
+  }
+}
+/*+++++++++++++++++++++++++++++++++++++++*/
+.sponsor{
+  padding: 50px 0;
+  &__wrapper{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &__label{
+    &:not(:last-child){
+      margin-right: 10px;
+    }
+  }
+}
+/*=====================================*/
+.subscribe{
+  @include adaptive-value ("padding-bottom", 150 , 50, 1);
+  &__wrapper{
+    border-radius: 20px 129px 20px 20px;
+    background:  #dfd7f9a0;
+    @include adaptive-value ("padding-top", 75 , 40, 1);
+    @include adaptive-value ("padding-bottom", 75 , 40, 1);
+  }
+  &__title{
+    text-align: center;
+    color: #5E6282;
+    font-size: 33px;
+    font-weight: 600;
+    line-height: 164%;
+    @include adaptive-value ("margin-bottom", 65 , 35, 1);
+  }
+  &__block{
+  }
+  &__btn{
+    background-color: $maincolor;
+    border: none;
+    height: 100%;
+    &:hover{
+      background-color: rgba(138, 121, 223, 1);
+    }
+  }
+  form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 68px;
+    input{
+      flex: 0 1 37%;
+      padding: 25px 10px 25px 66px;
+      border-radius: 10px;
+      height: 100%;
+      background-image: url("@img/mail.svg");
+      background-repeat: no-repeat;
+      background-position-x: 30px;
+      background-position-y: 50%;
+      @include adaptive-value ("font-size", 18 , 35, 1);
+    }
+  }
+  @media (max-width:$md3) {
+    &__wrapper{
+      border-radius: 0;
+    }
+    form{
+      flex-direction: column;
+      align-items: normal;
+      input{
+        flex: 1 1 100%;
+      }
+    }
+    
+  }
+}
+/*==========================================================*/

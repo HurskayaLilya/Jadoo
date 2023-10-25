@@ -1,0 +1,194 @@
+.footer{
+   font-family: "Poppins";
+   font-weight: 500;
+   @include adaptive-value ("padding-bottom", 75 , 30, 1);
+   &__wrapper{
+      display: flex;
+      flex-direction: column;
+   }
+   &__inf{
+      display: flex;
+      align-items: start;
+      justify-content: space-around;
+   }
+   &__copyright{
+      align-self: center;
+      @include adaptive-value ("margin-top", 90 , 15, 1);
+   a:hover{
+      color: $maincolor;
+      transition: all 0.3s ease 0.3s;
+   }
+   }
+}
+.block-1{
+   &__logo{
+      font-size: 44px;
+      color: #181E4B;
+   }
+   &__subtitle{
+      font-size: 13px;
+      line-height: 125%;
+      max-width: 207px;
+   }
+   @media(max-width:$md3){
+      text-align: center;
+      width: 100%;
+      &__subtitle{
+         max-width: none;
+      }
+   }
+}
+.block-2{
+   display: flex;
+   margin: 0 10px;
+   @media(max-width:$md3){
+      margin: 0;
+   }
+}
+.spoiler__title{
+   color: #080809;
+   @include adaptive-value ("font-size", 21 , 30, 1);
+   font-weight: 700;
+   line-height: 125%;
+   @include adaptive-value ("margin-bottom", 34 , 15, 1);
+
+}
+.spoiler__links{
+   line-height: 125%;
+   font-size: 18px;
+   a{
+      display:block;
+      &:not(:last-child){
+         margin-bottom: 12px;
+      }
+      &:hover{
+         color: $maincolor;
+         transition: all 0.3s ease 0.3s;
+      }
+   }
+}
+.contact{
+   @include adaptive-value ("margin-right", 80 , 40, 1);
+   @include adaptive-value ("margin-left", 80 , 40, 1);
+}
+.socials{
+   &__links{
+      flex-direction: row;
+      display: flex;
+
+      justify-content: space-between;
+   }
+   &__text{
+      @include adaptive-value ("font-size", 20 , 15, 1);
+      line-height: 125%;
+      letter-spacing: 0.1px;
+      margin: 26px 0 15px;
+   }
+   &__buttons{
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+      .icon,
+      .text{
+         display: inline-block;
+      }
+   }
+}
+.socials__link{
+   width: 41px;
+   height: 41px;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center; 
+   box-shadow:(0px 2px 10px rgba(0, 0, 0, 0.10));
+   &:hover{
+      transition: all 0.3s ease 0.3s;
+      background: conic-gradient(from 180deg at 50% 50%, #B8D2F1 0deg, #F289AA 60.00000178813934deg, #C68BF0 106.09081864356995deg, #D164DA 153.7500035762787deg, #C963E8 221.24999284744263deg, #BFC2E8 258.75deg, #FFC999 288.7499928474426deg, #D0D8C9 315deg, #BAD0F1 334.13365602493286deg, #CED8CB 358.9677572250366deg, rgba(255, 255, 255, 0.00) 360deg);
+      filter: drop-shadow(0px 2px 10px rgba(0, 0, 0, 0.10));
+   }
+}
+.btn{
+   padding: 7px 15px;
+   color: white;
+   border-radius: 17.5px;
+   background-color: black;
+   @media (max-width:$md3) {
+      padding: 3px 7px;
+      
+   }
+}
+@media (max-width:$md2){
+   .socials__buttons{
+      flex-direction: column;
+      align-items: center;
+   }
+   .btn{
+      margin-bottom: 10px;
+   }
+}
+@media (max-width:$md3){
+   .block-2,
+   .footer__inf{
+      flex-direction: column;
+   }
+   .socials{
+      width:100%;
+      margin-top: 20px;
+      &__links{
+         justify-content: space-evenly;
+      }
+      &__text{
+         text-align: center;
+      }
+      &__buttons{
+         flex-direction: row;
+         justify-content: space-evenly;
+      }
+   }
+}
+.spoiler{
+   position: relative;
+   display:flex;
+   align-items:flex-start;
+   &__title{
+     padding-right: 20px;
+     border: none;
+     background-color: inherit;
+   }
+ }
+@media(max-width:$md3){
+   .block-2{
+      width: 100%;
+   }
+   .spoiler{
+      flex-direction: column;
+      &__company,
+      &__contact,
+      &__more
+      {
+         border-bottom: 1px solid black;
+          width: 100%;
+          position: relative;
+       }
+   }
+   .spoiler__title::after{
+      content: '>';
+      font-size: 30px;
+      position:absolute;
+      right: 0;
+      top: 0;
+      transform: rotate(90deg);
+      transition: transform 0.3s ease 0s;
+    }
+    .spoiler__title._active{
+      color: $maincolor;
+      transition: all 0.3s ease 0.3s;
+
+    }
+     .spoiler__title._active::after {
+        transform: rotate(-90deg);
+        color: $maincolor;
+        transition: all 0.3s ease 0.3s;
+     } 
+ } 
