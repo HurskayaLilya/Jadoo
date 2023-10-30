@@ -263,3 +263,30 @@ let _slideToggle = (target, duration = 500) => {
       return _slideUp(target, duration);
    }
 };
+/***************************************** */
+const swiper = new Swiper('.say__swiper', {
+   // Optional parameters
+   slidesPerView: 1,
+      breakpoints:{
+         767.99:{
+            loop: true,
+            direction: 'vertical',
+         }
+      }  ,
+ 
+   // If we need pagination
+   pagination: {
+     el: '.swiper-pagination',
+   },
+ 
+   // Navigation arrows
+   navigation: {
+     nextEl: '.swiper-button-next',
+     prevEl: '.swiper-button-prev',
+   },
+ 
+   // And if we need scrollbar
+   scrollbar: {
+     el: '.swiper-scrollbar',
+   },
+ });
